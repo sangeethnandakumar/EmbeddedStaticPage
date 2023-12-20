@@ -15,8 +15,5 @@
 	<ItemGroup>
 		<EmbeddedResource Include="WebRoot\**\*.*" />
 	</ItemGroup>
-	<ItemGroup>
-	  <None Remove="WebRoot\styles.css" />
-	</ItemGroup>
 
 </Project>

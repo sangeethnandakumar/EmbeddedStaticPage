@@ -23,7 +23,7 @@ if (app.Environment.IsDevelopment())
 
 app.UsePerformanceMiddleware(new PerformanceMiddlewareOptions
 {
-    FolderName = "WebRoot"
+    FolderName = "Twileloop.WebEmbed.WebRoot"
 });
 
 app.UseHttpsRedirection();

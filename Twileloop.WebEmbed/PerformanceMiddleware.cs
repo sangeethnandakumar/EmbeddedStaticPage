@@ -5,9 +5,7 @@ using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System.IO;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Twileloop.WebEmbed
 {
@@ -51,7 +49,7 @@ namespace Twileloop.WebEmbed
             var staticFileOptions = new StaticFileOptions
             {
                 RequestPath = "/performance",
-                FileProvider = new EmbeddedFileProvider(assembly, "Twileloop.WebEmbed.WebRoot"),
+                FileProvider = new EmbeddedFileProvider(assembly, options.FolderName),
             };
 
             // Use the StaticFileMiddleware constructor directly
@@ -66,7 +64,7 @@ namespace Twileloop.WebEmbed
 
     public class PerformanceMiddlewareOptions
     {
-        public string FolderName { get; set; } = "WebRoot";
+        public string FolderName { get; set; } = "Twileloop.WebEmbed.WebRoot";
     }
 
     public static class PerformanceMiddlewareExtensions
