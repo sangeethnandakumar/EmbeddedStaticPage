@@ -1,11 +1,13 @@
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Twileloop.WebEmbed;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers()
+    .PartManager.ApplicationParts.Add(new AssemblyPart(typeof(PerfomanceController).Assembly));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
