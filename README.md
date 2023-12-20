@@ -1,6 +1,7 @@
 # Embed UI + API from NuGet package
 
 ## Add Framework Reference To Your Class Library
+This is required to access `IWebHostEnvironment`
 
 ```xml
 	<ItemGroup>
@@ -8,7 +9,9 @@
 	</ItemGroup>
 ```
 
-## Create a WebRoot folder and embedd it
+## Create a WebRoot folder and embed it
+
+> NOTE: This will allow to embed all files inside WebRoot as well as subfolders
 
 ```xml
 	<!-- Add this ItemGroup to embed your static files -->
@@ -18,6 +21,8 @@
 ```
 
 ## Add your controllers. Use [ApiExplorer] to omit it from Swagger
+
+> `[ApiExplorerSettings(IgnoreApi = true)]` only blocks the controller's visibility to Swagger. The controller will still be active
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
