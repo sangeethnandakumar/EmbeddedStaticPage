@@ -1,0 +1,18 @@
+﻿body {
+    font-family: 'Roboto', sans-serif;
+    margin: 20px;
+}
+
+/* Add any additional styling here */
+
+.container {
+    max-width: 800px;
+}
+
+hr {
+    border-top: 2px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+}
